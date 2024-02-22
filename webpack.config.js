@@ -26,9 +26,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i, // для картинок
         type: "asset/resource",
-        generator: {
-          filename: "assets/[name][ext][query]", // сохраняем изображения в папку assets
-        },
       },
     ],
   },
