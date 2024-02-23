@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 const path = require("path");
 
 module.exports = {
@@ -12,7 +14,7 @@ module.exports = {
     clean: true,
     filename: "[name].bundle.js", // [name] тут дорівнює app
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "assets/[name][ext]", // у dist створюємо папку assets
+    assetModuleFilename: "assets/images/[name][ext]", // у dist створюємо папку assets
   },
   mode: "development",
   devServer: {
@@ -27,16 +29,6 @@ module.exports = {
         test: /\.(s[ac]ss|css)$/i, // для sass/css
         use: ["style-loader", "css-loader", "sass-loader"],
       },
-      {
-        loader: "url-loader",
-        options: {
-          limit: 8192,
-        },
-      },
-      {
-        test: /\.html$/,
-        use: ["html-loader"],
-      },
     ],
   },
   plugins: [
@@ -44,7 +36,9 @@ module.exports = {
       title: "God Of War",
       template: "src/index.html",
       inject: true,
-      publicPath: "./",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/assets/images", to: "assets/images" }],
     }),
   ],
 };
