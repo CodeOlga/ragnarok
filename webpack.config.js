@@ -11,7 +11,7 @@ module.exports = {
   output: {
     clean: true,
     filename: "[name].bundle.js", // [name] тут дорівнює app
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     assetModuleFilename: "assets/[name][ext]", // у dist створюємо папку assets
   },
   mode: "development",
