@@ -2,6 +2,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
+  stats: {
+    children: true,
+  },
   entry: {
     app: "./src/assets/js/index.js",
   },
@@ -9,6 +12,7 @@ module.exports = {
     clean: true,
     filename: "[name].bundle.js", // [name] тут дорівнює app
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "assets/[name][ext]", // у dist створюємо папку assets
   },
   mode: "development",
   devServer: {
@@ -24,8 +28,14 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i, // для картинок
-        type: "asset/resource",
+        loader: "url-loader",
+        options: {
+          limit: 8192,
+        },
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"],
       },
     ],
   },
@@ -33,6 +43,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "God Of War",
       template: "src/index.html",
+      inject: true,
+      publicPath: "./",
     }),
   ],
 };
