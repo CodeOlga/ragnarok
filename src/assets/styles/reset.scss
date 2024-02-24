@@ -55,7 +55,10 @@ li {
 }
 
 .container {
-  width: 1420px;
+  width: 100%;
+  max-width: 1468px;
+  padding: 0 24px;
+  // width: 1420px;
   margin: 0 auto;
 }
 
@@ -85,3 +88,8 @@ h2 {
 .orange {
   color: $orange;
 }
+
+// css variables - breakepoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1280px;
