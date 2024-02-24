@@ -34,6 +34,14 @@ const values = [
     price: 29.99,
     title: "Deluxe Edition",
   },
+  {
+    price: 35.99,
+    title: "Dualsense With a Game",
+  },
+  {
+    price: 15.99,
+    title: "Limited Edition",
+  },
 ];
 
 const header = document.querySelector(".header");
