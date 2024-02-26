@@ -1139,6 +1139,12 @@
     background: linear-gradient(180deg, #30373f 0%, #000000 99.82%);
     padding: 32px;
     position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      width: 100vw;
+      padding: 20px;
+    }
 
     &::before {
       width: 90%;
@@ -1216,6 +1222,10 @@
   row-gap: 16px;
   justify-content: space-between;
   width: 470px;
+
+  @media screen and (max-width: 768px) {
+    width: 350px;
+  }
 
   &-group {
     width: calc(50% - 13px);
