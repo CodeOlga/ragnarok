@@ -41,7 +41,8 @@
     min-height: 700px;
 
     @media screen and (max-width: 768px) {
-      min-height: 100vh;
+      // min-height: 100vh;
+      min-height: 800px; // ?????
     }
 
     &:after,
@@ -77,6 +78,10 @@
 
   &-about {
     margin-top: 90px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
   }
 
   &-explore {
@@ -323,6 +328,10 @@
     @include button;
     @include hoverViolet;
     margin-top: 36px;
+
+    @media screen and (max-width: 768px) {
+      margin: 36px auto 0 auto;
+    }
   }
 }
 
@@ -416,7 +425,7 @@
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    row-gap: 80px;
+    row-gap: 60px;
   }
 
   &-description {
@@ -481,7 +490,7 @@
       animation: gravitation 1.5s linear infinite alternate;
 
       @media screen and (max-width: 768px) {
-        width: 80%;
+        width: 90%;
       }
     }
 
@@ -751,6 +760,7 @@
 
     @media screen and (max-width: 768px) {
       margin: 28px auto 0 auto;
+      padding: 8px 12px;
     }
   }
 }
