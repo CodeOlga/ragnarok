@@ -79,6 +79,10 @@ h2 {
   text-align: center;
   opacity: 1;
   transition: opacity 0.5s;
+
+  @media screen and (max-width: 768px) {
+    font-size: 38px;
+  }
 }
 
 .violet {
@@ -90,6 +94,6 @@ h2 {
 }
 
 // css variables - breakepoints
-$bp-mobile: 480px;
-$bp-tablet: 768px;
-$bp-desktop: 1280px;
+// $bp-mobile: 480px;
+// $bp-tablet: 768px;
+// $bp-desktop: 1280px;

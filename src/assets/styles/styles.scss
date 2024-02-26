@@ -40,6 +40,10 @@
     // min-height: 70vh;
     min-height: 700px;
 
+    @media screen and (max-width: 768px) {
+      min-height: 100vh;
+    }
+
     &:after,
     &:before {
       height: 764px;
@@ -50,6 +54,11 @@
       top: 0;
       right: 0;
       z-index: -1;
+
+      @media screen and (max-width: 768px) {
+        height: 360px;
+        width: 390px;
+      }
     }
 
     &:after {
@@ -77,14 +86,26 @@
   &-news,
   &-faq {
     margin-top: 100px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 80px;
+    }
   }
 }
 
 .header {
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+
   &-menu {
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+      align-items: flex-start;
+    }
 
     &__button {
       width: 25px;
@@ -127,6 +148,11 @@
       margin-left: 50px;
       z-index: -1;
 
+      @media screen and (max-width: 768px) {
+        margin-left: 30px;
+        margin-bottom: 80px;
+      }
+
       ul {
         column-gap: 24px;
         font-weight: 400;
@@ -135,6 +161,10 @@
         text-transform: uppercase;
         transform: translateX(-200px);
         opacity: 0;
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+        }
       }
     }
 
@@ -224,6 +254,10 @@
     margin-left: auto;
     column-gap: 19px;
 
+    @media screen and (max-width: 768px) {
+      margin: 0 auto;
+    }
+
     span {
       font-weight: 400;
       line-height: 19px;
@@ -243,6 +277,12 @@
         line-height: 47px;
         min-width: 55px;
         text-align: center;
+
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+          line-height: 37px;
+          min-width: 45px;
+        }
       }
 
       &-info {
@@ -263,6 +303,11 @@
       font-weight: 600;
       font-size: 100px;
       line-height: 100px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 60px;
+        line-height: 60px;
+      }
     }
   }
 
@@ -288,6 +333,12 @@
     grid-template-columns: repeat(3, 350px);
     column-gap: 16px;
     justify-content: center;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 350px);
+      column-gap: 0px;
+      row-gap: 16px;
+    }
   }
 
   &-item {
@@ -363,8 +414,17 @@
   margin-top: 20px;
   transition: column-gap 0.5s;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    row-gap: 80px;
+  }
+
   &-description {
     min-width: 410px;
+
+    @media screen and (max-width: 768px) {
+      min-width: 300px;
+    }
 
     p {
       color: $sea;
@@ -382,12 +442,22 @@
       margin-top: 19px;
       justify-content: space-between;
       align-items: center;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        row-gap: 20px;
+      }
     }
 
     &__price {
       font-weight: 700;
       font-size: 30px;
       line-height: 36px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 19px;
+        line-height: 23px;
+      }
     }
 
     &__button {
@@ -395,6 +465,10 @@
       @include hoverOrange;
       padding: 14px 19px;
       font-weight: 500;
+
+      @media screen and (max-width: 768px) {
+        padding: 8px 12px;
+      }
     }
   }
 
@@ -405,6 +479,10 @@
     img {
       max-width: fit-content;
       animation: gravitation 1.5s linear infinite alternate;
+
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
     }
 
     &::before {
@@ -455,6 +533,10 @@
     font-size: 50px;
     color: $white;
     line-height: 39px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   &-btn {
@@ -558,16 +640,34 @@
     column-gap: 5%;
     transition: column-gap 0.5s;
 
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 40px;
+    }
+
     &.reverse {
       flex-direction: row-reverse;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
 
       .explore {
         &-img {
           justify-content: start;
+
+          @media screen and (max-width: 768px) {
+            margin-top: 40px;
+          }
         }
 
         &-description {
           text-align: right;
+
+          @media screen and (max-width: 768px) {
+            text-align: left;
+          }
         }
 
         &-button {
@@ -583,6 +683,11 @@
     display: flex;
     align-items: center;
     justify-content: end;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      justify-content: start;
+    }
 
     &__wrap {
       width: 300px;
@@ -610,6 +715,10 @@
         position: absolute;
         bottom: 0;
         left: 0;
+
+        @media screen and (max-width: 768px) {
+          left: -30px; // ??????
+        }
       }
     }
   }
@@ -617,6 +726,10 @@
   &-description {
     min-width: max-content;
     width: 50%;
+
+    @media screen and (max-width: 768px) {
+      min-width: fit-content;
+    }
 
     ul {
       flex-direction: column;
@@ -635,6 +748,10 @@
     @include button($orange);
     @include hoverOrange;
     margin-top: 28px;
+
+    @media screen and (max-width: 768px) {
+      margin: 28px auto 0 auto;
+    }
   }
 }
 
@@ -675,18 +792,31 @@
       text-transform: uppercase;
       color: $white;
       margin: 7px 0 16px 0;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
 
     &__description {
       column-gap: 24px;
       height: 248px;
       align-items: flex-start;
+
+      @media screen and (max-width: 768px) {
+        height: 380px; // ????????
+      }
     }
 
     &__img {
       min-width: 278px;
       height: 100%;
       @include bg;
+
+      @media screen and (max-width: 768px) {
+        min-width: 180px;
+      }
     }
 
     &__text {
@@ -728,6 +858,7 @@
   &-items {
     flex-direction: column;
     row-gap: 32px;
+    margin-top: 32px;
   }
 
   &-item {
@@ -808,6 +939,10 @@
   padding-top: 156px;
   padding-bottom: 20px;
 
+  @media screen and (max-width: 768px) {
+    padding-top: 120px;
+  }
+
   &::before {
     content: "";
     display: block;
@@ -818,6 +953,12 @@
     right: 20%;
     z-index: -1;
     background: url(../images/footer.png) no-repeat center/cover;
+
+    @media screen and (max-width: 768px) {
+      width: 300px;
+      height: 390px; // ???????????/
+      right: 0;
+    }
   }
 
   &-top {
@@ -827,9 +968,15 @@
   &-menu {
     column-gap: 22px;
     font-weight: 400;
+    font-size: 14px;
     line-height: 27px;
     text-transform: uppercase;
     transition: color 0.25s ease;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     a {
       color: rgba(255, 255, 255, 0.5);
@@ -873,6 +1020,10 @@
       padding: 10px;
       position: absolute;
       visibility: hidden;
+
+      @media screen and (max-width: 768px) {
+        right: 0;
+      }
 
       &-item {
         text-transform: uppercase;
