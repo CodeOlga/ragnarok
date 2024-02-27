@@ -29,6 +29,10 @@ module.exports = {
         test: /\.(s[ac]ss|css)$/i, // для sass/css
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
