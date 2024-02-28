@@ -19,6 +19,7 @@ const classes = {
   opened: "opened",
   hidden: "hidden",
   active: "active",
+  noScroll: "no-scroll",
 };
 
 const values = [
@@ -59,6 +60,7 @@ const modalTitle = document.querySelector(".modal-version");
 const modalPrice = document.querySelector(".modal-total__price");
 const modalClose = document.querySelector(".modal-close");
 const overlay = document.querySelector(".overlay");
+const body = document.body;
 
 // burger menu, navigation to sections
 const toggleMenu = () => header.classList.toggle(classes.opened);
@@ -202,11 +204,13 @@ const handleBuyButton = ({ currentTarget: target }) => {
   modalPrice.innerText = `${price}$`;
   modal.classList.add(classes.opened);
   overlay.classList.add(classes.opened);
+  body.classList.add(classes.noScroll);
 };
 
 const closeModal = () => {
   modal.classList.remove(classes.opened);
   overlay.classList.remove(classes.opened);
+  body.classList.remove(classes.noScroll);
 };
 
 window.addEventListener("resize", () => {
